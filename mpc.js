@@ -143,7 +143,7 @@ const target = {
 
 function Obstacle(x, y){
     let obj = {
-        size: 60,
+        size: 20,
         x: x,
         y: y,
 
