@@ -3,7 +3,7 @@ let cursorStyle = 0;
 let obstacleAdditionCountdown = 10;
 const INF = 100000000000;
 
-//const horizonInputEl = document.getElementById("horizonInput");
+const horizonInputEl = document.getElementById("horizonInput");
 
 function draggable(obj){
     let mouseCollision = (obj.dist(mouseX, mouseY) < obj.size);
@@ -29,7 +29,7 @@ const chaser = {
     x: 0,
     y: 0,
 
-    maxStepSize: 10,
+    maxStepSize: 7,
     horizon: 15,
 
     mouseOffsetX: 0,
@@ -58,7 +58,7 @@ const chaser = {
         for(const obstacle of obstacleList){
             if(obstacle.intersects(x, y)){
                 c = INF;
-            // } else if (dist(obstacle.x, obstacle.y, x, y) < 50){
+            } // else if (dist(obstacle.x, obstacle.y, x, y) < 50){
             //     c += Math.pow((50 - dist(obstacle.x, obstacle.y, x, y)), 2);
             // }
         }
@@ -70,7 +70,7 @@ const chaser = {
         let px = this.x;
         let py = this.y;
         let maxStepSize = this.maxStepSize;
-        //this.horizon = horizonInputEl.value();
+        this.horizon = horizonInputEl.value;
         let horizon = this.horizon;
 
         let minCost = 1e15;
@@ -129,9 +129,9 @@ const target = {
         push();
         fill(255, 153, 0);
         noStroke();
-        translate(this.x + this.size/2, this.y + this.size/2);
+        translate(this.x, this.y);
         rotate(45);
-        rect(0, 0, this.size, this.size);
+        rect(-this.size/2, -this.size/2, this.size, this.size);
         pop();
     },
 
