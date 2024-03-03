@@ -58,9 +58,9 @@ const chaser = {
         for(const obstacle of obstacleList){
             if(obstacle.intersects(x, y)){
                 c = INF;
-            } else if (dist(obstacle.x, obstacle.y, x, y) < 50){
-                c += Math.pow((50 - dist(obstacle.x, obstacle.y, x, y)), 2);
-            }
+            // } else if (dist(obstacle.x, obstacle.y, x, y) < 50){
+            //     c += Math.pow((50 - dist(obstacle.x, obstacle.y, x, y)), 2);
+            // }
         }
         return c;
     },
