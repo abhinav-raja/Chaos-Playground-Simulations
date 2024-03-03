@@ -3,7 +3,7 @@ let cursorStyle = 0;
 let obstacleAdditionCountdown = 10;
 const INF = 100000000000;
 
-const horizonInputEl = document.getElementById("horizonInput");
+//const horizonInputEl = document.getElementById("horizonInput");
 
 function draggable(obj){
     let mouseCollision = (obj.dist(mouseX, mouseY) < obj.size);
@@ -70,7 +70,7 @@ const chaser = {
         let px = this.x;
         let py = this.y;
         let maxStepSize = this.maxStepSize;
-        this.horizon = horizonInputEl.value();
+        //this.horizon = horizonInputEl.value();
         let horizon = this.horizon;
 
         let minCost = 1e15;
